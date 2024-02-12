@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./wordsList.scss";
 import data from "../../data.json";
+import { Link } from "react-router-dom";
 
 const WordsList = () => {
   // console.log(data);
@@ -8,9 +9,9 @@ const WordsList = () => {
     <div className="wrapper">
       {data.map((item, i) => {
         return (
-          <div className="word" key={i}>
-            {item}
-          </div>
+          <Link to={`/page/${item}`} key={i}>
+            <div className="word">{item}</div>
+          </Link>
         );
       })}
     </div>

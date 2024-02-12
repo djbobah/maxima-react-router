@@ -1,0 +1,14 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  // grid-template-rows: ;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+}
+
+.word {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+}

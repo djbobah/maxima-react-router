@@ -1,0 +1,23 @@
+.btn-back {
+  position: absolute;
+  left: 30px;
+  top: 25px;
+  width: 10rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: #87898c;
+  cursor: pointer;
+  &:hover {
+    background-color: #c4c6c8;
+    border: 1px solid #fff;
+  }
+}
+.wordWrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wordPage {
+  font-size: 8rem;
+}

@@ -4,7 +4,7 @@ import data from "../../data.json";
 import alpha from "../../alpha.json";
 import AlphaItem from "../AlphaItem/AlphaItem.tsx";
 import SelectedList from "../SelectedList/SelectedList.tsx";
-import Word from "../Word/Word.tsx";
+import WordWraper from "../../WordWraper/WordWraper.tsx";
 
 const WordsList: React.FC = () => {
   const [selectedAlpha, setSelectedAlpha] = React.useState("");
@@ -31,11 +31,7 @@ const WordsList: React.FC = () => {
         })}
       </div>
       {!selectedAlpha ? (
-        <div className="wrapper">
-          {data.map((item, i) => {
-            return <Word key={i} item={item} />;
-          })}
-        </div>
+        <WordWraper data={data} />
       ) : (
         <SelectedList data={data} alpha={selectedAlpha} />
       )}

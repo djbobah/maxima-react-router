@@ -18,7 +18,7 @@ const SelectedList: React.FC<SelectedListType> = ({ data, alpha }) => {
       <div className="filterList">
         <h3 className="title">Отфильтровано по первой букве "{alpha}"</h3>
         <hr />
-        <div>
+        <div className="filterMain">
           {filteredFirstAlpha.length > 0
             ? filteredFirstAlpha.map((item, i) => <Word key={i} item={item} />)
             : "нет совпадений"}
@@ -29,9 +29,9 @@ const SelectedList: React.FC<SelectedListType> = ({ data, alpha }) => {
           Отфильтровано по наличию буквы "{alpha}" в слове
         </h3>
         <hr />
-        <div>
+        <div className="filterMain">
           {filteredAnyAlpha.length > 0
-            ? filteredAnyAlpha.map((item) => <div>{item}</div>)
+            ? filteredAnyAlpha.map((item, i) => <Word key={i} item={item} />)
             : "нет совпадений"}
         </div>
       </div>

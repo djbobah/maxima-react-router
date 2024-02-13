@@ -30,7 +30,7 @@ const SelectedList: React.FC<SelectedListType> = ({ data, alpha }) => {
         </h3>
         <hr />
         <div>
-          {filteredFirstAlpha.length > 0
+          {filteredAnyAlpha.length > 0
             ? filteredAnyAlpha.map((item) => <div>{item}</div>)
             : "нет совпадений"}
         </div>

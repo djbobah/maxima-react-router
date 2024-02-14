@@ -1,16 +1,18 @@
 import * as React from "react";
 import "./wordsList.scss";
 // import data from "../../data.json";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import alpha from "../../alpha.json";
 import AlphaItem from "../AlphaItem/AlphaItem.tsx";
 import SelectedList from "../SelectedList/SelectedList.tsx";
-import WordWraper from "../../WordWraper/WordWraper.tsx";
+import WordWraper from "../WordWraper/WordWraper.tsx";
+import { useAppSelector } from "../../hooks.ts";
+import AddWord from "../AddWord/AddWord.tsx";
 
 const WordsList: React.FC = () => {
   const [selectedAlpha, setSelectedAlpha] = React.useState("");
   // console.log(data);
-  const data = useSelector((state) => state.words);
+  const data = useAppSelector((state) => state.words.words);
 
   const handleClickAlpha = (symbol: string) => {
     if (selectedAlpha !== symbol) {
@@ -38,6 +40,7 @@ const WordsList: React.FC = () => {
       ) : (
         <SelectedList data={data} alpha={selectedAlpha} />
       )}
+      <AddWord />
     </>
   );
 };

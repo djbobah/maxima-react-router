@@ -1,5 +1,5 @@
 import React from "react";
-import Word from "../components/Word/Word.tsx";
+import Word from "../Word/Word.tsx";
 
 type WordWraperType = {
   data: string[];

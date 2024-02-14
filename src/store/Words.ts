@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+// import type { PayloadAction } from "@reduxjs/toolkit";
+import type { RootState } from "../store/index.ts";
 
 interface IWordsState {
   words: string[];
@@ -41,9 +43,21 @@ const initialState: IWordsState = {
 const WordsSlice = createSlice({
   name: "words",
   initialState,
-  reducers: {},
+  reducers: {
+    deleteWord(state, action) {
+      state.words = state.words.filter((word) => word !== action.payload);
+    },
+    editWord(state, action) {
+      const ind = state.words.findIndex((el) => el === action.payload.word);
+      state.words[ind] = action.payload.newWord;
+    },
+    addWord(state, action) {
+      state.words.push(action.payload);
+    },
+  },
 });
 
-export const {} = WordsSlice.actions;
+export const { deleteWord, editWord, addWord } = WordsSlice.actions;
 
+export const selectCount = (state: RootState) => state.words;
 export default WordsSlice.reducer;

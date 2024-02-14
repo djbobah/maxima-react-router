@@ -1,0 +1,24 @@
+.addWordForm {
+  position: absolute;
+  bottom: 5rem;
+  right: 5rem;
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.addWordForm__input {
+  font-size: 1.5rem;
+  width: 25rem;
+  border-radius: 0.3rem;
+  padding: 0.3rem 0.5rem;
+}
+.addWordForm__button {
+  // width: 2rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
